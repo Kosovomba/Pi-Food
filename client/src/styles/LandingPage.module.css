@@ -1,0 +1,41 @@
+body {
+    background-image:radial-gradient( darkslategray,rgb(26, 49, 49));    
+    background-size: cover;    
+}
+.marco {
+    background-image: url(https://c.tenor.com/VnnxqkdfNf4AAAAC/cooking.gif);  
+    padding: 465px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;    
+    background-size: 68%;    
+    background-position: center center;
+}
+.intro {
+    position:absolute;
+    padding: 5px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    left: 10px;
+    right: 1630px;
+    top: 50px;
+    background-image: url(https://png.pngtree.com/background/20210714/original/pngtree-pvc-recipe-background-picture-picture-image_1191529.jpg);
+    background-size: 120%;
+    background-repeat: no-repeat;
+    /* margin-bottom: 100px; */
+}
+.button {
+    font-size: 40px;
+    background-image: url(https://st4.depositphotos.com/18559564/26546/i/450/depositphotos_265468606-stock-photo-ladle-spatula-and-skimmer-from.jpg);
+    padding-top: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;    
+    color: rgb(231, 122, 20);
+    border: thick double #32a1ce;
+    margin: 50px;
+}
+.button:hover {
+    cursor: pointer;
+    border: thick double #085472;
+    color: #085472;
+}

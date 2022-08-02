@@ -1,0 +1,24 @@
+.container {
+  position: relative;
+  text-align: center;  
+  margin: 42px ;
+  border: 5px solid rgba(0, 0, 0, 0.519);
+  background-color: rgb(237, 237, 198);
+  padding: 40px;
+}
+.name {
+  position: absolute;  
+  top: 8px;
+  background-color: rgba(85, 16, 150, 0.862);
+  color: white;
+  left: 5px;
+  font-size: 20px;
+}
+
+.diets {
+  position: absolute;
+  bottom: 5px;
+  background-color: rgba(73, 12, 131, 0.71);
+  color: white;
+  left: 5px;
+}

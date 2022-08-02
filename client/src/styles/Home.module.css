@@ -1,0 +1,43 @@
+.container {
+    /* background-image: url(https://static3.bigstockphoto.com/3/8/3/large2/383142572.jpg); */
+    background-image: url(https://previews.123rf.com/images/belchonock/belchonock1209/belchonock120904407/15520607-papel-para-recetas-verduras-y-especias-sobre-fondo-verde.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;    
+    background-size: 100%;
+    position:absolute;
+    background-position: center center;
+    min-width: 1910px;
+    min-height: 930px;
+    /* background-color: rgb(52, 40, 35); */
+}
+.searchBar {
+    padding: 10px;
+    background-color: rgba(139, 165, 166, 0.699);    
+    margin-left: 249px;
+    margin-right: auto;
+    height: fit-content;
+    width: fit-content;
+    position: fixed;
+    padding-left: 145px;
+    padding-right: 145px;
+    z-index: 10;
+}
+.create {
+    padding-top: 5px;
+    padding-bottom: 110px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-image: url(https://c.tenor.com/I7GuZXfrYmkAAAAi/peach-goma.gif);
+    background-color: rgba(234, 173, 173, 0.915);
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* position: absolute; */
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    color: rgb(193, 0, 0);
+    font-size: 30px;
+    font-style: oblique;
+    border: 4mm ridge rgba(201, 15, 31, 0.6);
+    z-index: auto;
+}

@@ -1,0 +1,33 @@
+.add {
+    background-image: url(https://media.istockphoto.com/photos/blank-recipe-book-on-wooden-table-picture-id481482102?k=20&m=481482102&s=612x612&w=0&h=GyrH5LH2uyjzsR0Y78W--8wuGYwQEvrbmRrSOgb85r8=);
+    background-repeat: no-repeat;    
+    background-size: 70%;
+    background-position: center center;
+    padding: 400px;
+    padding-top: 430px;
+}
+.submit {
+    position: absolute;
+    bottom: 25px;
+    right: 100px;
+    font-size: 40px;
+    background-color: rgb(125, 125, 195);
+}
+.submit:hover {
+    cursor:pointer;    
+}
+.back {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-size: 50px;
+    border: 5px solid rgb(141, 71, 21);
+    background-color: rgb(125, 125, 195);
+    color: rgb(141, 71, 21);    
+}
+.back:hover {
+    background-color: rgb(26, 26, 108);;
+    color: #ffcc00;
+    cursor: pointer;
+    border: 5px solid #ffcc00;
+}
