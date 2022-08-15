@@ -1,18 +1,21 @@
 .recipes {
     background-color: rgba(251, 222, 58, 0.569);
+    align-items: center;
     height: fit-content;
     width: fit-content;
-    color: greenyellow;
-    margin-left: 200px;
-    margin-right: 200px;
+    color: rgb(232, 28, 14);
+    font-size: 40px;
+    margin-left: auto;
+    margin-right: auto;
     border: 4mm ridge rgba(211, 220, 50, .6);
     margin-top: 10px;
     display: flex;
     flex-flow: wrap;
-    /* align-items: center; */
+    max-width: 77%;
+    text-align: center;
 }
 .pagesTop {
-    margin-top: 100px;
+    margin-top: 160px;
     text-align: center;
 }
 
@@ -23,8 +26,17 @@
     text-align: center;
 }
 .button {
+    font-size: 30px;    
+    margin: 2px;
+    background-color: bisque;
+    width: 48px;
+    height: 45px;
+    text-align: center;
+}
+.buttonOff {
     font-size: 30px;
-    padding: 5px;
+    width: 45px;
+    height: 45px;
     margin: 5px;
     background-color: bisque;    
 }
@@ -33,6 +45,7 @@
     color: #f6eab7;
     cursor: pointer;
     border: 2px solid #e3d395;
+    transition: 0.2s;
 }
 .loading {
     background-image: url(https://media4.giphy.com/media/5dl2u2Iy6hwEEXwlFv/giphy.gif?cid=ecf05e47vn37jq7yecsxxd4bysv6lcvelwffcru2se0hrrga&rid=giphy.gif&ct=g);

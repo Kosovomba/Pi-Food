@@ -6,19 +6,19 @@ export default function reducer(state = initialState, action) {
             return {recipes: action.payload[0], filteredRecipes: action.payload[0], dietsDb: action.payload[1], orderedRecipes: action.payload[0]}
         case 'SEARCH_RECIPES': 
             return {...state, filteredRecipes: action.payload[0], dietsDb: action.payload[1], orderedRecipes:action.payload[0]}
-        case 'ADD_RECIPE':
-            return {...state, recipes: [...state.recipes, action.payload]}
+        // case 'ADD_RECIPE':
+        //     return {...state, recipes: [...state.recipes, action.payload]}
         case 'SORT':
             let sortRecipes = [...state.filteredRecipes]
             let sorts = action.payload
             let mod
             sorts.indicator === 'Alfabetically'? mod = 'name': mod = 'healthScore'
-            if (sorts.order !== 'Not ordered') {
-            sortRecipes = sortRecipes.sort((a, b)=>{
-                if (a[mod] < b[mod]) {
+            if (sorts.order !== 'Not ordered') {                   
+            sortRecipes = sortRecipes.sort((a, b)=>{               
+                if (a[mod].toString().toUpperCase() < b[mod].toString().toUpperCase()) {
                     return sorts.order === 'Ascending'? -1: 1
                 }
-                if (a[mod] > b[mod]) {
+                if (a[mod].toString().toUpperCase() > b[mod].toString().toUpperCase()) {
                     return sorts.order === 'Descending'? -1: 1
                 }
                 return 0

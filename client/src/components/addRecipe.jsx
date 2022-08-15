@@ -1,8 +1,9 @@
 import { useHistory } from 'react-router-dom'
-import { addRecipe, fetchRecipes } from '../store/actions'
+import { fetchRecipes } from '../store/actions'
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styles from '../styles/Add.module.css'
+import axios from 'axios'
 
 export default function AddRecipe() {
     const [newRecipe, setNewRecipe] = useState({name: '', summary: '', healthScore: 0, steps: ''})
@@ -35,7 +36,7 @@ export default function AddRecipe() {
     if(newRecipe.name.length === 0 || /[^a-z0-9ñáéíóú,.()\s-]/i.test(newRecipe.name) === true) {
         errorName = true
     }
-    if(/[^a-z0-9ñáéíóú,.()\s-]/i.test(newRecipe.summary) === true) {
+    if(newRecipe.summary.length <= 10 || /[^a-z0-9ñáéíóú,.()\s-]/i.test(newRecipe.summary) === true) {
         errorSummary = true
     }
     if(/[^a-z0-9ñáéíóú,.()\s-]/i.test(newRecipe.steps) === true) {
@@ -76,10 +77,17 @@ export default function AddRecipe() {
         if (recipesNames.includes(newRecipe.name)) {
             alert('The name is in use. Insert a different one')}
             else {
-        dispatch(addRecipe({...newRecipe, diets: dietsArr.dietsSelected}))
-        alert('Recipe created')
-        dispatch(fetchRecipes())
-            history.push('/home')
+        // dispatch(addRecipe({...newRecipe, diets: dietsArr.dietsSelected}))
+        let newRecipe2 = {...newRecipe, diets: dietsArr.dietsSelected}
+        axios.post('http://localhost:3001/api/recipes', newRecipe2)
+        .then(() => {            
+            alert('Recipe created')
+            dispatch(fetchRecipes())
+                history.push('/home')            
+        })
+        .catch((error)=> {
+            console.log(error)
+        })
         }
     }
     return <div className={styles.add}>
@@ -87,27 +95,28 @@ export default function AddRecipe() {
         <>
         </>
         <form onSubmit={(e)=> onSubmit(e)} >
-            <div>
+            <div className={styles.form}>
+            <div className={styles.item}>
             <label htmlFor=''>*NAME</label>
             <input type='text' name='name' onChange={onInputChange} value={newRecipe.name} placeholder = 'Insert name'/>
-            {errorName === true? <span>{' Insert a name without special characters ( allowed: ,.()- ).'}</span>: <span>Name correct!</span>}
+            {errorName === true? <span className={styles.error}>{' Insert a name without special characters ( allowed: ,.()- ).'}</span>: <span>Name correct!</span>}
             </div>
-            <div>
-            <label htmlFor=''>SUMMARY</label>
+            <div className={styles.item}>
+            <label htmlFor=''>*SUMMARY</label>
             <input type='text' name='summary' onChange={onInputChange} value={newRecipe.summary} placeholder = 'Insert description'/>
-            {errorSummary === true? <span>{' Must not contain special characters ( allowed: ,.()- ).'}</span>: <span> </span>}
+            {errorSummary === true? <span className={styles.error}>{' Insert a summary of more than 10 characters, without special characters ( allowed: ,.()- ).'}</span>: <span> </span>}
             </div>
-            <div>
+            <div className={styles.item}>
             <label htmlFor=''>STEPS</label>
             <input type='text' name='steps' onChange={onInputChange} value={newRecipe.steps} placeholder = 'Insert steps'/>
-            {errorSteps === true? <span>{' Must not contain special characters ( allowed: ,.()- ).'}</span>: <span> </span>}
+            {errorSteps === true? <span className={styles.error}>{' Must not contain special characters ( allowed: ,.()- ).'}</span>: <span> </span>}
             </div>
-            <div>
+            <div className={styles.item}>
             <label htmlFor=''>HEALTHSCORE</label>
             <input type='number' name='healthScore' onChange={onInputChange} value={newRecipe.healthScore} placeholder = 'Insert health score'/>
-            {errorNum === true? <span>{' Must be a number from 0 to 100'}</span>: <span> </span>}
+            {errorNum === true? <span className={styles.error}>{' Must be a number from 0 to 100'}</span>: <span> </span>}
             </div>
-            <div>
+            <div className={styles.item}>
             <label htmlFor=''>DIETS</label>
             <select onChange={onChange} name='select'>
                 <option key='options' value='options'>DIET OPTIONS</option>
@@ -120,7 +129,8 @@ export default function AddRecipe() {
             {dietsSelected.map((d) => {                    
                     return <button key={`${d} diets`} value={d} onClick={handleDiets}>{d}</button>
                 })}
-            </div>            
+            </div>
+            </div>
             <>
             </>
             <input className={styles.submit} type='submit' value='Create' disabled={ error? true : false}/>

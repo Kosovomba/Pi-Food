@@ -13,7 +13,7 @@ export default function LandingPage() {
         e.preventDefault()
         history.push('/home')        
     }
-    useEffect(()=> {        
+    useEffect(()=> {
             dispatch(fetchRecipes())
             return () => {
                 setButton(null)
@@ -26,8 +26,11 @@ export default function LandingPage() {
         <div className={styles.marco}>
         <div className={styles.intro}>
         <h2>Don't know what to cook today? Or, maybe, you are too basic at cooking? Get in, and learn the best recipes, with the best instructions; even YOU, can make them! You can create and post your own recipes, too!!!</h2> 
-        <button className={styles.button} onClick={onClick} disabled={ button? false : true}>Let's go!</button>
+        {button?<button className={styles.button} onClick={onClick}>Let's go!</button>: <p className={styles.loading}>Loading...</p>}
         </div>
+        <div className={styles.img1}></div>
+        <div className={styles.img2}></div>
+        <div className={styles.img3}></div>
         </div>     
         </div>
 }

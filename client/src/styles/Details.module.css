@@ -1,0 +1,74 @@
+.container {
+    background-image: url(https://img.freepik.com/foto-gratis/abra-libro-recetas-blanco-sobre-fondo-madera-marron_155003-7740.jpg?w=1380&t=st=1659540370~exp=1659540970~hmac=f5cc0a11e7cae5b543bea8933ef7358fd97932ae340b2d24613ffddd89f6296c);
+    background-repeat: no-repeat;
+    background-size: 115%;
+    background-position: center center;
+    padding-top: 240px;
+    padding-bottom: 45px;
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 1620px;
+    min-height: 680px;
+}
+.container2 {
+    position:relative;
+    bottom: 180px;
+    display: flex;
+    flex-direction: row;    
+    /* align-content: center;     */
+    /* justify-content: center; */
+}
+.leftPage {
+    position:relative;
+    margin-left:40px;
+    top: 15px;
+    left: 10px;
+    max-width: 600px;
+    /* justify-content: center; */
+    /* flex-direction: column; */
+}
+.rightPage {
+    flex-direction: column;
+    /* margin-top: 50px; */
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 350px;
+}
+.health {
+    position: relative;
+    left: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 30px;
+    font-weight: 600;
+}
+.steps {
+    position: relative;
+    left: 20px;
+    font-size: 14px;
+}
+.summary {
+    position: relative;
+    bottom: 10px;
+    font-size: 12px;
+}
+.back {
+    position:absolute;
+    top: 20px;
+    left: 15px;
+    padding: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    background-color: rgb(191, 126, 79);
+}
+.back:hover {  
+    background-color: rgb(170, 139, 116);
+    cursor: pointer;
+}
+.name {
+    font-weight: 700;
+    font-size: 22px;
+    position:relative;
+    top: 15px;
+    left: 80px;
+}

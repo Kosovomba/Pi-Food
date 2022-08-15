@@ -1,26 +1,92 @@
 .container {
-    /* background-image: url(https://static3.bigstockphoto.com/3/8/3/large2/383142572.jpg); */
-    background-image: url(https://previews.123rf.com/images/belchonock/belchonock1209/belchonock120904407/15520607-papel-para-recetas-verduras-y-especias-sobre-fondo-verde.jpg);
+    background-image: url(https://wallpaperaccess.com/full/1843881.jpg);
+    /* background-image: url(https://i.ytimg.com/vi/Zm-qIA_dvdM/maxresdefault.jpg); */
+    /* background-image: url(https://www.wallpaperuse.com/wallp/54-549454_m.jpg); */
     background-attachment: fixed;
     background-repeat: no-repeat;    
-    background-size: 100%;
+    background-size: 100%;   
     position:absolute;
     background-position: center center;
-    min-width: 1910px;
-    min-height: 930px;
+    min-width: 1920px;
+    min-height: 937px;
+    align-content: center;
     /* background-color: rgb(52, 40, 35); */
 }
 .searchBar {
-    padding: 10px;
-    background-color: rgba(139, 165, 166, 0.699);    
-    margin-left: 249px;
+    padding: 5px;
+    padding-bottom: 10px;
+    background-color: rgba(139, 165, 166, 0.831);    
+    margin-left: 250px;
     margin-right: auto;
-    height: fit-content;
     width: fit-content;
+    min-width: 1280px;
     position: fixed;
-    padding-left: 145px;
-    padding-right: 145px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     z-index: 10;
+    align-items: center;
+}
+.search {
+    position: absolute;
+    right: 6px; 
+}
+.searchButton {
+    padding: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: rgb(170, 166, 116);    
+}
+.searchButton:hover {  
+    background-color: darkkhaki;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.searchInput {
+    padding: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: rgb(170, 166, 116);    
+}
+.order {
+    margin: 10px;
+}
+.filter {
+    margin: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 2px;
+    background-color: rgb(80, 80, 189);
+    margin-right: 165px;
+}
+.diets {
+    padding: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: rgb(107, 151, 189);
+    border-radius: 5px;
+}
+.diets:hover {
+    background-color: rgb(132, 182, 225);
+    /* transition: 0.3s; */
+    cursor: pointer;
+}
+
+.allRecipes {
+    padding: 5px;
+    font-size: 18px;
+    border: ridge rgb(175, 193, 187);
+    background-color: rgb(129, 181, 163);
+    margin: 5px;
+}
+.allRecipes:hover {
+    color:rgb(8, 81, 6);
+    border: ridge rgb(129, 181, 163);
+    background-color: rgb(153, 200, 184);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.label {
+    font-weight: 700;
 }
 .create {
     padding-top: 5px;
@@ -30,8 +96,7 @@
     background-image: url(https://c.tenor.com/I7GuZXfrYmkAAAAi/peach-goma.gif);
     background-color: rgba(234, 173, 173, 0.915);
     background-size: contain;
-    background-repeat: no-repeat;
-    /* position: absolute; */
+    background-repeat: no-repeat;    
     position: fixed;
     right: 30px;
     bottom: 30px;
@@ -39,5 +104,6 @@
     font-size: 30px;
     font-style: oblique;
     border: 4mm ridge rgba(201, 15, 31, 0.6);
-    z-index: auto;
+    font-weight: 700;
+    z-index: 15;
 }

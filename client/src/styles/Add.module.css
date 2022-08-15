@@ -5,6 +5,20 @@
     background-position: center center;
     padding: 400px;
     padding-top: 430px;
+    display: flex;
+    /* justify-content: center; */
+}
+.form {
+    position: relative;
+    bottom:200px;
+    left: 100px;
+}
+.item {
+    margin: 5px;
+    font-weight: 500;
+}
+.error {
+    color: red;
 }
 .submit {
     position: absolute;

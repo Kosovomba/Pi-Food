@@ -22,9 +22,9 @@ export default function PageContainer({page, setPage, recipes}) {
     for (let i = 1; i <= pag; i++) {
         pages.push(i)
     }
-    let pageButtons = [<button className={styles.button} disabled={page === 1?true: false} onClick={onClick2} key={'anterior'} value={'<<'}>{'<<'}</button>, ...pages.map((p)=> {
-        return <button className={styles.button} disabled={page*1===p?true:false} onClick={onClick} key={p} value={p}>{p}</button>
-    }), <button className={styles.button} disabled={page === pages.length?true: false} onClick={onClick3} key={'siguiente'} value={'>>'}>{'>>'}</button>]
+    let pageButtons = [<button className={page === 1? styles.buttonOff:styles.button} disabled={page === 1?true: false} onClick={onClick2} key={'anterior'} value={'<<'}>{'<<'}</button>, ...pages.map((p)=> {
+        return <button className={page*1===p?styles.buttonOff:styles.button} disabled={page*1===p?true:false} onClick={onClick} key={p} value={p}>{p}</button>
+    }), <button className={page >= pages.length? styles.buttonOff:styles.button} disabled={page >= pages.length?true: false} onClick={onClick3} key={'siguiente'} value={'>>'}>{'>>'}</button>]
 
     let cont = 0
     let recipesPerPag = []

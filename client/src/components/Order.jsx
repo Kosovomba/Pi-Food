@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch } from "react-redux"
 import { sort } from '../store/actions'
+import styles from '../styles/Home.module.css'
 
 export default function Order() {
     const [sorts, setSorts] = useState({order: 'Not ordered', indicator: 'Alfabetically', flag: 1})
@@ -16,14 +17,14 @@ export default function Order() {
     function handleChange(e) {
         setSorts({...sorts, [e.target.name]: e.target.value})
     }   
-    return <div>
-            <label htmlFor=""> ORDER </label>
+    return <div className={styles.order}>
+            <label className={styles.label} htmlFor=""> ORDER </label>
         <select name='order' onChange={handleChange} value={sorts.order}>
             <option>Not ordered</option>
             <option>Ascending</option>
             <option>Descending</option>
         </select>
-            <label htmlFor=""> INDICATOR </label>
+            <label className={styles.label} htmlFor=""> INDICATOR </label>
         <select name='indicator' onChange={handleChange} value={sorts.indicator}>
             <option>Alfabetically</option>
             <option>By health score</option>

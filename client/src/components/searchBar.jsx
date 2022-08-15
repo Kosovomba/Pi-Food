@@ -27,17 +27,18 @@ export default function SearchBar({setPage}) {
     }
 
     return <div className={styles.searchBar}>
-        <form onSubmit={onSubmit} >
-            <input type='text' onChange = {onInputChange} value ={search} placeholder = 'Search recipes'/>
-            <input type='submit' value='Search'/>
+        <form className={styles.search} onSubmit={onSubmit} >
+            <input className={styles.searchInput} type='text' onChange = {onInputChange} value ={search} placeholder = 'Search recipes'/>
+            <input className={styles.searchButton} type='submit' value='Search'/>
         </form>
         <>
         <Order/>
-        <button key={'all recipes'} value={'Show all recipes'} onClick={clickFilter}>Show all recipes</button>
-        <>Filter by diet type</>
+        <button className={styles.allRecipes} key={'all recipes'} value={'Show all recipes'} onClick={clickFilter}>Show all recipes</button>
+        <div className={styles.filter}><>Filter by diet type: </>
         {diets.map((d) => {
-                    return <button key={`${d} diet`} value={d} onClick={clickFilter}>{d}</button>
+                    return <button className={styles.diets} key={`${d} diet`} value={d} onClick={clickFilter}>{d}</button>
                 })}
+        </div>
         </>
         </div>
 }

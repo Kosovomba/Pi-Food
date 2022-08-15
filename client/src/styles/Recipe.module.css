@@ -1,18 +1,26 @@
 .container {
   position: relative;
   text-align: center;  
-  margin: 42px ;
+  margin: 32px ;
   border: 5px solid rgba(0, 0, 0, 0.519);
   background-color: rgb(237, 237, 198);
-  padding: 40px;
+  padding: 38px;
+  border-radius: 16px;
 }
 .name {
   position: absolute;  
+  padding: 2px;
   top: 8px;
   background-color: rgba(85, 16, 150, 0.862);
   color: white;
   left: 5px;
+  border: 2px solid transparent;
   font-size: 20px;
+  margin-right: 5px;
+}
+.name:hover {
+    border: 2px double rgb(220, 227, 22);
+    background-color: rgb(86, 29, 139);
 }
 
 .diets {
@@ -21,4 +29,6 @@
   background-color: rgba(73, 12, 131, 0.71);
   color: white;
   left: 5px;
+  font-size: 18px;
+  margin-right: 5px;
 }
