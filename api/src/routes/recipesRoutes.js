@@ -15,6 +15,7 @@ let recipeAllDiets = function (recipe){
                 summary: recipe.summary,
                 healthScore: recipe.healthScore,        
                 steps: recipe.instructions,
+                readyInMinutes: recipe.readyInMinutes,
                 diets: diets2
             }
 }
@@ -35,9 +36,9 @@ let recipeDbDiets = function (recipes) {
 
 
 router.get('/', (req, res, next) => {   
-    let promesa1 = axios({url: `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&addRecipeInformation=true`, params: {number: 100}})
+    // let promesa1 = axios({url: `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&addRecipeInformation=true`, params: {number: 100}})
     let name = req.query.name
-    // let promesa1 = axios.get('https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5')
+    let promesa1 = axios.get('https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5')
     let promesa2 = Diet.findAll()
     Promise.all([promesa1, promesa2])
     .then((response) => {
@@ -79,8 +80,8 @@ router.get('/:idRecipe', async (req, res, next) => {
     try {
     let {idRecipe} = req.params
     if (typeof idRecipe === 'string' && idRecipe.length < 10) {
-    let recipe = await axios.get(`https://api.spoonacular.com/recipes/${idRecipe}/information?apiKey=${apiKey}`)      
-    let recipe2 = recipeAllDiets(recipe.data)
+    let recipe = await axios.get(`https://api.spoonacular.com/recipes/${idRecipe}/information?apiKey=${apiKey}`)
+    let recipe2 = recipeAllDiets(recipe.data)    
         res.send(recipe2)
     } 
     else {
