@@ -13,7 +13,7 @@ export default function RecipeDetails() {
     }
     let {id} = useParams()
     useEffect(()=> {
-        axios.get(`http://localhost:3001/api/recipes/${id}`)  
+        axios.get(`${axios.defaults.baseURL}/api/recipes/${id}`)  
         .then((response) => {
             if (!response.data.summary) {
                 setFlag(false)
