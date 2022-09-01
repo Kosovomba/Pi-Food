@@ -47,7 +47,7 @@ export default function AddRecipe() {
     }
 
     function onChange(e) {
-        e.preventDefault()
+        // e.preventDefault()
         dietsOptions = dietsOptions.filter((d)=> d !== e.target.value)
         dietsSelected.push(e.target.value)
         console.log(dietsOptions, dietsSelected)
@@ -55,7 +55,7 @@ export default function AddRecipe() {
     }
     
     function handleDiets(e) {
-        e.preventDefault()
+        // e.preventDefault()
         dietsSelected = dietsSelected.filter((d)=> d !== e.target.value)
         dietsOptions.push(e.target.value)
         setDietsArr({dietsOptions: dietsOptions, dietsSelected: dietsSelected})
@@ -79,7 +79,7 @@ export default function AddRecipe() {
             else {
         // dispatch(addRecipe({...newRecipe, diets: dietsArr.dietsSelected}))
         let newRecipe2 = {...newRecipe, diets: dietsArr.dietsSelected}
-        axios.post('http://localhost:3001/api/recipes', newRecipe2)
+        axios.post(`${axios.defaults.baseURL}/api/recipes`, newRecipe2)
         .then(() => {            
             alert('Recipe created')
             dispatch(fetchRecipes())
